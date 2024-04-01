@@ -9,7 +9,7 @@ import { uglify } from 'rollup-plugin-uglify';
 export default {
   input: ['src/BoilerPlateElement.ts'],
   output: {
-    file: 'dist/boilerplate-element.js',
+    file: 'dist/dynamic-dashboard.js',
     format: 'es'
   },
   plugins: [

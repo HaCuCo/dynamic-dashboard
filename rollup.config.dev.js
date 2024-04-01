@@ -9,7 +9,7 @@ export default {
   input: ['src/BoilerPlateElement.ts'],
   output: {
     format: 'es',
-    file: './dist/boilerplate-element.js'
+    file: './dist/dynamic-dashboard.js'
   },
   plugins: [
     commonjs(),

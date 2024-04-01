@@ -48,7 +48,7 @@ class BoilerPlateElement extends TailwindElement() {
 }
 
 // eslint-disable-next-line no-undef
-customElements.define('boilerplate-element', BoilerPlateElement);
+customElements.define('dynamic-dashboard', BoilerPlateElement);
 
 declare global {
   // eslint-disable-next-line no-unused-vars
@@ -62,8 +62,8 @@ window.customCards = window.customCards || [];
 
 // eslint-disable-next-line no-undef
 window.customCards.push({
-  type: 'boilerplate-element',
-  name: 'Boilerplate Element',
+  type: 'dynamic-dashboard',
+  name: 'Dynamic Dashboard',
   preview: true,
-  description: 'Boilerplate Element'
+  description: 'Dynamic Dashboard for Home Assistant'
 });

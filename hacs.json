@@ -1,6 +1,6 @@
 {
-  "name": "Rss Feed List",
+  "name": "Dynamic Dashboard",
   "render_readme": true,
-  "filename": "rss-feed-list.js",
+  "filename": "dynamic-dashboard.js",
   "content_in_root": false
 }
