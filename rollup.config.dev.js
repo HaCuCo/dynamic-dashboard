@@ -9,7 +9,7 @@ export default {
   input: ['src/DynamicDashboard.ts'],
   output: {
     format: 'es',
-    file: './dist/dynamic-dashboard.js'
+    file: './dist/dynamic-dashboard-dev.js'
   },
   plugins: [
     commonjs(),
