@@ -4,7 +4,7 @@ import { HassConfig } from './types';
 import { HomeAssistant } from 'custom-card-helpers';
 import { TailwindElement } from './shared/TailwindElement.ts';
 
-class BoilerPlateElement extends TailwindElement() {
+class DynamicDashboard extends TailwindElement() {
   @property({ attribute: false })
   public hass!: HomeAssistant;
 
@@ -48,7 +48,7 @@ class BoilerPlateElement extends TailwindElement() {
 }
 
 // eslint-disable-next-line no-undef
-customElements.define('dynamic-dashboard', BoilerPlateElement);
+customElements.define('dynamic-dashboard', DynamicDashboard);
 
 declare global {
   // eslint-disable-next-line no-unused-vars
