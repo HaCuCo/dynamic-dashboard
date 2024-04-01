@@ -7,7 +7,7 @@ import summary from 'rollup-plugin-summary';
 import { uglify } from 'rollup-plugin-uglify';
 
 export default {
-  input: ['src/BoilerPlateElement.ts'],
+  input: ['src/DynamicDashboard.ts'],
   output: {
     file: 'dist/dynamic-dashboard.js',
     format: 'es'

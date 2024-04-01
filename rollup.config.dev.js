@@ -6,10 +6,10 @@ import typescript from '@rollup/plugin-typescript';
 import postcss from 'rollup-plugin-postcss';
 
 export default {
-  input: ['src/BoilerPlateElement.ts'],
+  input: ['src/DynamicDashboard.ts'],
   output: {
     format: 'es',
-    file: './dist/dynamic-dashboard.js'
+    file: './dist/dynamic-dashboard-dev.js'
   },
   plugins: [
     commonjs(),

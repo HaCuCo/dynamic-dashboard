@@ -1,12 +1,13 @@
 import { html } from 'lit';
 import { property, state } from 'lit/decorators.js';
-import { HassConfig } from './types';
-import { HomeAssistant } from 'custom-card-helpers';
+import { Hass, HassConfig } from './types';
 import { TailwindElement } from './shared/TailwindElement.ts';
+import './components/DashboardSection.ts';
+import { DashboardSection } from './components/DashboardSection.ts';
 
-class BoilerPlateElement extends TailwindElement() {
+class DynamicDashboard extends TailwindElement() {
   @property({ attribute: false })
-  public hass!: HomeAssistant;
+  public hass!: Hass;
 
   @state()
   private config!: HassConfig;
@@ -23,21 +24,13 @@ class BoilerPlateElement extends TailwindElement() {
     if (!this.hass) throw new Error('No Hass found');
     if (!this.config) throw new Error('No Config found');
 
+    const areas = this.hass.areas;
+
     return html`
-      <div class="card w-96 bg-base-100 shadow-xl image-full">
-        <figure>
-          <img
-            src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-            alt="Shoes"
-          />
-        </figure>
-        <div class="card-body">
-          <h2 class="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now</button>
-          </div>
-        </div>
+      <div>
+        ${Object.keys(areas).map((key) => {
+          return new DashboardSection(areas[key]).render();
+        })}
       </div>
     `;
   }
@@ -48,15 +41,16 @@ class BoilerPlateElement extends TailwindElement() {
 }
 
 // eslint-disable-next-line no-undef
-customElements.define('dynamic-dashboard', BoilerPlateElement);
+customElements.define('dynamic-dashboard-dev', DynamicDashboard);
 
 declare global {
   // eslint-disable-next-line no-unused-vars
   interface Window {
-    customCards: any;
+    customCards: never;
   }
 }
 
+/*
 // eslint-disable-next-line no-undef
 window.customCards = window.customCards || [];
 
@@ -67,3 +61,4 @@ window.customCards.push({
   preview: true,
   description: 'Dynamic Dashboard for Home Assistant'
 });
+*/
